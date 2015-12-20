@@ -1,7 +1,13 @@
 package com.badzovski.QuickOrder.dao;
 
-import com.badzovski.QuickOrder.model.Restaurant;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.badzovski.QuickOrder.model.Restaurant;
+
 
 /**
  * Created by filip on 12/12/15.
@@ -9,22 +15,57 @@ import org.springframework.jdbc.core.support.JdbcDaoSupport;
 public class RestaurantJdbc extends JdbcDaoSupport implements RestaurantDAO {
 
     @Override
-    public int findByID(int id) {
-        return 1;
+    public Restaurant findByID(int id) {
+
+        Restaurant restoraunt = null;
+        String query = "SELECT * FROM Restaurant"+
+                " WHERE ID ="+id;
+
+            restoraunt = (Restaurant) getJdbcTemplate().queryForObject(query, new BeanPropertyRowMapper(Restaurant.class));
+
+        return restoraunt;
     }
+
+    @Override
+    public List<Restaurant> allRestoraunts() {
+
+        List<Restaurant> listRestoraunt = new ArrayList<Restaurant>();
+        String query = "SELECT * FROM Restaurant";
+
+        listRestoraunt = getJdbcTemplate().query(query, new BeanPropertyRowMapper(Restaurant.class));
+
+        return listRestoraunt;
+    }
+
+
+
 
     @Override
     public int insert(Restaurant restaurant) {
 
-        String sql = "INSERT INTO RESTAURANT " +
-                "(NAME, LOCATION, EMAIL, DESCRIPTION, IMAGE)";
+        String sql = "INSERT INTO Restaurant " +
+                "(NAME, LOCATION, DESCRIPTION) VALUES (?, ?, ?)";
 
-        getJdbcTemplate().update(sql, new Object[]{restaurant.getName(), restaurant.getLocation(), restaurant.getEmail()});
-        return 1;
+//        try{
+            getJdbcTemplate().update(sql, new Object[]{restaurant.getName(), restaurant.getLocation(), restaurant.getDescription()});
+            System.out.println("error: " + 1);
+            return 1;
+//        }catch (Exception ex){
+//            System.out.println("error: " + ex.toString());
+//            return 0;
+//        }
+
     }
 
     @Override
     public int update(Restaurant restaurant) {
+        String query = "UPDATE Restaurant" +
+                " SET NAME = ?, LOCATION = ?, DESCRIPTION = ?"+
+                " WHERE ID=?";
+
+        getJdbcTemplate().update(query, new Object[]{restaurant.getName(), restaurant.getLocation(), restaurant.getDescription(), 1});
+
+        System.out.println("error: " + 1);
         return 1;
     }
 }

@@ -1,5 +1,6 @@
 package com.badzovski.QuickOrder.dao;
 
+import java.util.List;
 import com.badzovski.QuickOrder.model.Restaurant;
 
 /**
@@ -8,9 +9,11 @@ import com.badzovski.QuickOrder.model.Restaurant;
 public interface RestaurantDAO {
 
 
-    public int findByID(int id); //or void
+    public Restaurant findByID(int id); //or void
 
     public int insert(Restaurant restaurant); //or void
 
     public int update(Restaurant restaurant);
+
+    public List<Restaurant> allRestoraunts();
 }
