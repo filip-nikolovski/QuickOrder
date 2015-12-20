@@ -7,15 +7,16 @@ public class Restaurant {
 
     private String name;
     private String location;
-    private String email;
+    private String description;
+
 
     public Restaurant() {
     }
 
-    public Restaurant(String name, String location, String email) {
+    public Restaurant(String name, String location, String description) {
         this.name = name;
         this.location = location;
-        this.email = email;
+        this.description = description;
     }
 
     public String getName() {
@@ -34,12 +35,12 @@ public class Restaurant {
         this.location = location;
     }
 
-    public String getEmail() {
-        return email;
+    public String getDescription() {
+        return description;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @java.lang.Override
@@ -47,7 +48,7 @@ public class Restaurant {
         return "Restaurant{" +
                 "name='" + name + '\'' +
                 ", location='" + location + '\'' +
-                ", email='" + email + '\'' +
+                ", email='" + description + '\'' +
                 '}';
     }
 }
