@@ -49,7 +49,6 @@ public class RestaurantController {
 
             Restaurant restaurant = restaurantDAO.findByID(id);
 
-
             return new ResponseEntity<>(restaurant, HttpStatus.OK);
         }catch (Exception ex){
             System.out.println("Error "+ex.toString());

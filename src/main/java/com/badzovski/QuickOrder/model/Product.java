@@ -4,7 +4,7 @@ package com.badzovski.QuickOrder.model;
  * Created by filip on 12/20/15.
  */
 
-public class Products{
+public class Product{
 
     private int ID;
     private String Name;
@@ -17,7 +17,7 @@ public class Products{
     }
 */
 
-    public Products(String image, String description, float price, int categoryID, String name, int ID) {
+    public Product(String image, String description, float price, int categoryID, String name, int ID) {
         Image = image;
         Description = description;
         Price = price;
@@ -76,7 +76,7 @@ public class Products{
 
     @java.lang.Override
     public java.lang.String toString() {
-        return "Products{" +
+        return "Product{" +
                 "ID=" + ID +
                 ", Name='" + Name + '\'' +
                 ", Description='" + Description + '\'' +
