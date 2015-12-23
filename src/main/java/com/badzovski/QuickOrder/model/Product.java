@@ -1,4 +1,4 @@
-package com.badzovski.QuickOrder.model;
+package src.main.java.com.badzovski.QuickOrder.model;
 
 /**
  * Created by filip on 12/20/15.
@@ -12,18 +12,20 @@ public class Product{
     private float Price;
     private String Image;
     private int categoryID;
+    private int restaurantID;
 
-    /*public Products() {
+    public Product() {
     }
-*/
 
-    public Product(String image, String description, float price, int categoryID, String name, int ID) {
+    public Product(String image, String description, float price, int categoryID, String name, int ID, int restaurantID) {
         Image = image;
         Description = description;
         Price = price;
         this.categoryID = categoryID;
         Name = name;
         this.ID = ID;
+        this.restaurantID = restaurantID;
+
     }
 
     public int getID() {
@@ -74,6 +76,14 @@ public class Product{
         this.categoryID = categoryID;
     }
 
+    public int getRestaurantID() {
+        return restaurantID;
+    }
+
+    public void setRestaurantID(int restaurantID) {
+        this.restaurantID = restaurantID;
+    }
+
     @java.lang.Override
     public java.lang.String toString() {
         return "Product{" +
@@ -83,6 +93,7 @@ public class Product{
                 ", Price=" + Price +
                 ", Image='" + Image + '\'' +
                 ", categoryID=" + categoryID +
+                ", restaurantID=" + restaurantID +
                 '}';
     }
 }

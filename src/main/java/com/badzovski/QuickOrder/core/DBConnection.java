@@ -1,4 +1,4 @@
-package com.badzovski.QuickOrder.core;
+package src.main.java.com.badzovski.QuickOrder.core;
 
 import javax.sql.DataSource;
 import java.sql.Connection;

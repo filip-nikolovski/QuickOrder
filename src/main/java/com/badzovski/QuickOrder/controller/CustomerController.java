@@ -1,7 +1,7 @@
-package com.badzovski.QuickOrder.controller;
+package src.main.java.com.badzovski.QuickOrder.controller;
 
-import com.badzovski.QuickOrder.dao.CustomerDAO;
-import com.badzovski.QuickOrder.model.Customer;
+import src.main.java.com.badzovski.QuickOrder.dao.CustomerDAO;
+import src.main.java.com.badzovski.QuickOrder.model.Customer;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

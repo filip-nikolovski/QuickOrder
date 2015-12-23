@@ -1,4 +1,4 @@
-package com.badzovski.QuickOrder.model;
+package src.main.java.com.badzovski.QuickOrder.model;
 
 
 /**

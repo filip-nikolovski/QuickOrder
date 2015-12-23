@@ -1,21 +1,16 @@
-package com.badzovski.QuickOrder.controller;
+package src.main.java.com.badzovski.QuickOrder.controller;
 
 
+import src.main.java.com.badzovski.QuickOrder.dao.RestaurantDAO;
+import src.main.java.com.badzovski.QuickOrder.model.Restaurant;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
-
 import java.util.List;
-
-import com.badzovski.QuickOrder.dao.RestaurantDAO;
-import com.badzovski.QuickOrder.model.Restaurant;
 
 /**
  * Created by filip on 12/12/15.

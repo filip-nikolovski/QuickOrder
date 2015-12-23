@@ -1,18 +1,17 @@
-package com.badzovski.QuickOrder.dao;
+package src.main.java.com.badzovski.QuickOrder.dao;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
+import src.main.java.com.badzovski.QuickOrder.model.Restaurant;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.badzovski.QuickOrder.model.Restaurant;
 
 
 /**
  * Created by filip on 12/12/15.
  */
-public class RestaurantJdbc extends JdbcDaoSupport implements RestaurantDAO {
+public class RestaurantJdbc extends JdbcDaoSupport implements src.main.java.com.badzovski.QuickOrder.dao.RestaurantDAO {
 
     @Override
     public Restaurant findByID(int id) {

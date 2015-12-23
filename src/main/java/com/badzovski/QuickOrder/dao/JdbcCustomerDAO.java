@@ -1,6 +1,6 @@
-package com.badzovski.QuickOrder.dao;
+package src.main.java.com.badzovski.QuickOrder.dao;
 
-import com.badzovski.QuickOrder.model.Customer;
+import src.main.java.com.badzovski.QuickOrder.model.Customer;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by NikolovskiF on 27.05.2015.
  */
-public class JdbcCustomerDAO implements CustomerDAO {
+public class JdbcCustomerDAO implements src.main.java.com.badzovski.QuickOrder.dao.CustomerDAO {
 
     private DataSource dataSource;
 
