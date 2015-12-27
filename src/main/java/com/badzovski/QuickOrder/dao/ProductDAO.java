@@ -14,7 +14,7 @@ public interface ProductDAO{
 
     public void update(Product Product);
 
-    public List<Product> allProducts();
+    public List<Product> allProductsByRestaurant(int id);
 
     public void delete(int id);
 }

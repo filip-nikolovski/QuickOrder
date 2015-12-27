@@ -13,7 +13,7 @@ import java.util.List;
 public class ProductJdbc extends JdbcDaoSupport implements src.main.java.com.badzovski.QuickOrder.dao.ProductDAO {
 
     public Product findByID(int id) {
-        String query = "SELECT * FROM PRODUCTS"+
+        String query = "SELECT * FROM Products"+
                 " WHERE ID = "+id;
 
         Product product = (Product) getJdbcTemplate().queryForObject(query, new BeanPropertyRowMapper(Product.class));
@@ -31,16 +31,16 @@ public class ProductJdbc extends JdbcDaoSupport implements src.main.java.com.bad
 
     public void update(Product product) {
 
-        String query = "UPDATE PRODUCTS"+
+        String query = "UPDATE Products"+
                 " SET NAME = ?, DESCRIPTION = ?, PRICE = ?, IMAGE = ?, RESTAURANTID = ?, CATEGORYID = ?"+
                 " WHERE ID=?";
 
         getJdbcTemplate().update(query, new Object[]{product.getName(), product.getDescription(), product.getPrice(), product.getImage(), product.getRestaurantID(), product.getCategoryID(), product.getID()});
     }
 
-    public List<Product> allProducts() {
+    public List<Product> allProductsByRestaurant(int id) {
 
-        String query = "SELECT * FROM PRODUCTS";
+        String query = "SELECT * FROM Products where RestaurantID ="+id;
 //        List<Product> listProducts = new ArrayList<Product>();
 
         List<Product> listProducts = getJdbcTemplate().query(query, new BeanPropertyRowMapper(Product.class));
@@ -50,7 +50,7 @@ public class ProductJdbc extends JdbcDaoSupport implements src.main.java.com.bad
 
     public void delete(int id) {
 
-        String query = "DELETE FROM PRODUCTS WHERE ID=?";
+        String query = "DELETE FROM Products WHERE ID=?";
 
         getJdbcTemplate().update(query, id);
     }
