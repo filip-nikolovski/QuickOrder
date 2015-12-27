@@ -1,4 +1,4 @@
-package com.badzovski.QuickOrder.core;
+package src.main.java.com.badzovski.QuickOrder.core;
 
 import org.springframework.stereotype.Component;
 

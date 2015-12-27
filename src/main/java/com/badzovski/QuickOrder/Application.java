@@ -1,4 +1,4 @@
-package com.badzovski.QuickOrder;
+package src.main.java.com.badzovski.QuickOrder;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

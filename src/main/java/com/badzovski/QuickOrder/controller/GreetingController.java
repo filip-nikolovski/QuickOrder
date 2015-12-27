@@ -1,6 +1,6 @@
-package com.badzovski.QuickOrder.controller;
+package src.main.java.com.badzovski.QuickOrder.controller;
 
-import com.badzovski.QuickOrder.model.Greeting;
+import src.main.java.com.badzovski.QuickOrder.model.Greeting;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

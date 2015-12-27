@@ -1,7 +1,7 @@
-package com.badzovski.QuickOrder.dao;
+package src.main.java.com.badzovski.QuickOrder.dao;
 
 import java.util.List;
-import com.badzovski.QuickOrder.model.Restaurant;
+import src.main.java.com.badzovski.QuickOrder.model.Restaurant;
 
 /**
  * Created by filip on 12/12/15.
