@@ -27,7 +27,13 @@ public class OrderJdbc extends JdbcDaoSupport implements OrderDAO {
         String query = "INSERT INTO Order " +
                 "(RetauranID, Status, OrderTime) VALUES (?, ?, ?)";
 
-        return getJdbcTemplate().update(query, new Object[]{order.getRestaurantID(), order.getStatus(), order.getOrderTime()});
+       // KeyHolder keyHolder = new GeneratedKeyHolder();
+
+        int rez =getJdbcTemplate().update(query, new Object[]{order.getRestaurantID(), order.getStatus(), order.getOrderTime()}); //, keyHolder
+
+       // System.out.println("rez "+rez + " key "+keyHolder);
+
+        return rez;
     }
 
     @Override

@@ -14,4 +14,7 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
+    <bean id="orderDAO" class="com.badzovski.QuickOrder.dao.OrderJdbc">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
 </beans>
