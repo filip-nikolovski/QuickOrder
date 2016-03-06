@@ -2,7 +2,6 @@ package com.badzovski.QuickOrder.dao;
 
 import com.badzovski.QuickOrder.model.Order;
 import com.badzovski.QuickOrder.model.Product;
-import com.badzovski.QuickOrder.model.Promotion;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -90,9 +89,13 @@ public class OrderJdbc extends JdbcDaoSupport implements OrderDAO{
 
        // Object object = new Object(){List<Product> }
 
+        order.setID((keyHolder.getKey().intValue()));
+
+        insertOrderItems(order);
 
 
 
+/*
 
         String query1 = "INSERT INTO `OrderItems` (`OrderID`, `ProductID`, `PromotionID`, `Note`, `Quantity`) VALUES(?, ?, ?, ?, ?)";  //, `PromotionID`, `Note`
         getJdbcTemplate().batchUpdate(query1, new BatchPreparedStatementSetter() {
@@ -104,20 +107,24 @@ public class OrderJdbc extends JdbcDaoSupport implements OrderDAO{
                // promotionInOrder.setId(0);
                 //int broj = 0;
 
-                /*if(orderItems.getPromotionList() != null && orderItems.getPromotionList().size()> i){
+                */
+/*if(orderItems.getPromotionList() != null && orderItems.getPromotionList().size()> i){
                     System.out.println("size "+orderItems.getPromotionList().size());
                     System.out.println(orderItems.getPromotionList().get(i));
                     promotionInOrder = orderItems.getPromotionList().get(i);
                 }else {
                     promotionInOrder.setId(0);
                 }
-*/
-        /*        System.out.println("i " + i);
+*//*
+
+        */
+/*        System.out.println("i " + i);
                 if(orderItems.getPromotionList().size() >= i) {
                     System.out.println(orderItems.getPromotionList().indexOf(i));
                     System.out.println("test: " +orderItems.getPromotionList().get(i));
                     promotionInOrder = orderItems.getPromotionList().get(i);
-                }*/
+                }*//*
+
 
                 System.out.println(keyHolder.getKey().toString() +itemsInOrder.getID() );
 
@@ -135,6 +142,7 @@ public class OrderJdbc extends JdbcDaoSupport implements OrderDAO{
                 return order.getProductList().size();
             }
         });
+*/
 
 
         System.out.println("keyholder "+keyHolder.getKey());
@@ -154,6 +162,7 @@ public class OrderJdbc extends JdbcDaoSupport implements OrderDAO{
 
         return getJdbcTemplate().update(query, new Object[]{order.getStatus(), order.getID()} );//order.getID()
 
+        //todo: update whole orders
     }
 
     @Override
@@ -178,6 +187,8 @@ public class OrderJdbc extends JdbcDaoSupport implements OrderDAO{
                 return order.getProductList().size();
             }
         });
+
+        //todo: if(promotionList != null)
 
         return 1;
     }

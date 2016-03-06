@@ -1,17 +1,19 @@
 package com.badzovski.QuickOrder.controller;
 
-import src.main.java.com.badzovski.QuickOrder.dao.ProductDAO;
-import src.main.java.com.badzovski.QuickOrder.model.Product;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import src.main.java.com.badzovski.QuickOrder.dao.ProductDAO;
+import src.main.java.com.badzovski.QuickOrder.model.Product;
 
 import java.util.List;
 
 /**
  * Created by badzovski on 20.1.16.
  */
+
 @RestController
 @RequestMapping("api/Product")
 public class ProductController {
@@ -41,8 +43,8 @@ public class ProductController {
     }
 
 
-    @RequestMapping(value = "/Restaurant/{id}", method = RequestMethod.GET)
-    public ResponseEntity<?> getProductByRestaurantId(@PathVariable int id){
+    @RequestMapping(value = "/Restaurant/{id}/{categoryId}", method = RequestMethod.GET)
+    public ResponseEntity<?> getProductByRestaurantId(@PathVariable int id , @PathVariable int categoryId){
 
         try {
             List<Product> listProduct = null;

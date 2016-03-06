@@ -10,11 +10,11 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 -->
-    <bean id="productDAO" class="com.badzovski.QuickOrder.dao.ProductJdbc">
+    <bean id="productDAO" class="com.badzovski.QuickOrder.dao.ProductDAO">
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="orderDAO" class="com.badzovski.QuickOrder.dao.OrderJdbc">
+    <bean id="orderDAO" class="com.badzovski.QuickOrder.dao.OrderDAO">
         <property name="dataSource" ref="dataSource"/>
     </bean>
 </beans>

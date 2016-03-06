@@ -21,4 +21,3 @@ com/badzovski/QuickOrder/model/Order.class
 com/badzovski/QuickOrder/Application.class
 com/badzovski/QuickOrder/model/OrderItems.class
 com/badzovski/QuickOrder/model/Restaurant.class
-com/badzovski/QuickOrder/dao/OrderJdbc$3.class

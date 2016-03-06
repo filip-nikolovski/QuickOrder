@@ -1,15 +1,16 @@
 package com.badzovski.QuickOrder.dao;
 
+import com.badzovski.QuickOrder.model.Product;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
-import src.main.java.com.badzovski.QuickOrder.model.Product;
+
 
 import java.util.List;
 
 /**
  * Created by badzovski on 20.1.16.
  */
-public class ProductJdbc extends JdbcDaoSupport implements src.main.java.com.badzovski.QuickOrder.dao.ProductDAO {
+public class ProductJdbc extends JdbcDaoSupport implements ProductDAO {
 
     public Product findByID(int id) {
         String query = "SELECT * FROM Products"+
@@ -37,15 +38,11 @@ public class ProductJdbc extends JdbcDaoSupport implements src.main.java.com.bad
         getJdbcTemplate().update(query, new Object[]{product.getName(), product.getDescription(), product.getPrice(), product.getImage(), product.getRestaurantID(), product.getCategoryID(), product.getID()});
     }
 
-    public List<Product> allProductsByRestaurant(int id) {
-
-        String query = "SELECT * FROM Products where RestaurantID ="+id;
-//        List<Product> listProducts = new ArrayList<Product>();
-
-        List<Product> listProducts = getJdbcTemplate().query(query, new BeanPropertyRowMapper(Product.class));
-
-        return listProducts;
+    @Override
+    public List<Product> allProductsByRestaurant(int id, int categoryId) {
+        return null;
     }
+
 
     public void delete(int id) {
 

@@ -1,6 +1,6 @@
 package com.badzovski.QuickOrder.dao;
 
-import src.main.java.com.badzovski.QuickOrder.model.Product;
+import com.badzovski.QuickOrder.model.Product;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public interface ProductDAO {
 
     public void update(Product Product);
 
-    public List<Product> allProductsByRestaurant(int id);
+    public List<Product> allProductsByRestaurant(int id, int categoryId);
 
     public void delete(int id);
 }
